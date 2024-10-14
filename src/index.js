@@ -5,16 +5,19 @@ const { createTransport } = require("nodemailer");
 
 // Configuration.
 const transConfig = require("./config/email/transporter");
+const transporter = createTransport(transConfig);
 
 // Instance.
-const email = new EmailService();
+const email = new EmailService(transporter);
 
-const transporter = createTransport(transConfig);
-const notify = new baseService(transporter);
+
+// const notify = new baseService();
 
 // Usage.
-notify.send("email to my customers..");
-email.sendEmail();
+// notify.send("email to my customers..");
+
+// this works well
+// email.sendEmail();
 
 // (async () => {
 
