@@ -1,0 +1,31 @@
+{
+  "name": "quickly-notify",
+  "version": "0.0.1",
+  "description": "Quickly Notify is an agile and user-friendly service that allows developers to send push notifications and emails efficiently. Designed to simplify communication with users, Quickly Notify ensures quick integration and reliable delivery of notifications and emails.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alicedev94/quickly-notify.git"
+  },
+  "keywords": [
+    "node",
+    "quickly",
+    "notify"
+  ],
+  "author": "alicedev94",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alicedev94/quickly-notify/issues"
+  },
+  "homepage": "https://github.com/alicedev94/quickly-notify#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.15"
+  }
+}
