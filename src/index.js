@@ -1,5 +1,6 @@
 const baseService = require("./services/notify");
 const EmailService = require("./services/notify/email");
+require("dotenv").config();
 
 const { createTransport } = require("nodemailer");
 
@@ -12,7 +13,7 @@ const email = new EmailService(transporter);
 // const notify = new baseService();
 
 // Usage.
-email.sendEmail("dilan.marcano.jesus@gmail.com", "Reparación de lavadora"); // Params client and header
+email.sendEmail(process.env.EMAIL_CLIENT, "Reparación de lavadora"); // Params client and header
 
 // Async context
 // (async () => {
