@@ -1,23 +1,26 @@
 const Notify = require("../index");
 // const transporter = { verify: () => Promise.resolve() }; // Mock del transporter o tu instancia real
 
+// Body email.
+const layout1 = require("../../../content/layout/first");
+
 class Email {
   // extends
   constructor(transporter) {
     this.transporter = transporter;
+    this.author = 'TEST-AUTHOR'
   }
 
-  async sendEmail() {
-    // console.log("1 - sendEmail return: ", message);
-    // send mail with defined transport object
-    const info = await this.transporter.sendMail({
-      from: 'qUIXK" <portalspitiendasdaka@gmail.com>', // sender address
-      to: "d.marcano.jesus@gmail.com", // list of receivers
-      subject: "REGISTRO ✔", // Subject line ASUNTO
-      //text: "Hello world?", // plain text body
-      html: `<h1>quicly-sends<h1/>`, // html body
+  async sendEmail(client, header) {
+    // console.log("1 - sendEmail return: layout1", layout1);
+    const { response } = await this.transporter.sendMail({
+      from: this.author, // evaluating.
+      to: client, // evaluating.
+      subject: header, // evaluating.
+      html: layout1, // wired parameters.
     });
-    console.log(info);
+    console.log(response);
+    return response;
   }
 }
 

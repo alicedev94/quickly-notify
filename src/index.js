@@ -9,16 +9,12 @@ const transporter = createTransport(transConfig);
 
 // Instance.
 const email = new EmailService(transporter);
-
-
 // const notify = new baseService();
 
 // Usage.
-// notify.send("email to my customers..");
+email.sendEmail("dilan.marcano.jesus@gmail.com", "Reparación de lavadora"); // Params client and header
 
-// this works well
-// email.sendEmail();
-
+// Async context
 // (async () => {
 
 // })();
