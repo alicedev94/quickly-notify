@@ -1,4 +1,3 @@
-const baseService = require("./services/notify");
 const EmailService = require("./services/notify/email");
 const { createTransport } = require("nodemailer");
 
