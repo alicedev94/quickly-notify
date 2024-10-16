@@ -7,7 +7,7 @@
 
 // Use to library
 
-const { quickMailNotification } = require("../src/index");
+const { quickMailNotification } = require("../../src/index");
 
 // improvement opportunity for this development.
 // 1 - return a success error in javascript.
