@@ -8,18 +8,15 @@ class Email {
   // extends
   constructor(transporter) {
     this.transporter = transporter;
-    this.author = 'TEST-AUTHOR'
   }
 
-  async sendEmail(client, header) {
-    // console.log("1 - sendEmail return: layout1", layout1);
+  async sendEmail(client, author, issue, htmlConntent) {
     const { response } = await this.transporter.sendMail({
-      from: this.author, // evaluating.
-      to: client, // evaluating.
-      subject: header, // evaluating.
-      html: layout1, // wired parameters.
+      from: author, // evaluating.
+      to: client, 
+      subject: issue, 
+      html: htmlConntent, 
     });
-    console.log(response);
     return response;
   }
 }
