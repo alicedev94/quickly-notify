@@ -40,7 +40,7 @@ const { quickMailNotification } = require("quickly-notify");
 const  client = "test.user@example.com"
 const  author= "Test Subject"
 const  message= "This is a test message for product change."
-const htmlConntent = "<h1>Example body email<h1/>";
+const htmlContent = "<h1>Example body email<h1/>";
 ```
 
 ## Async context:
@@ -51,13 +51,11 @@ const htmlConntent = "<h1>Example body email<h1/>";
      client, 
       author,
       message,
-      htmlConntent
+      htmlContent
     );
-    console.log("#response", response);
-     return this response.
+    return response;
   } catch (error) {
     console.error(error);
-     return this response.
   }
 })();
 ```

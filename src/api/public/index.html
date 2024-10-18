@@ -21,12 +21,10 @@
       }
 
       async function subscription() {
-        // Service Worker
         const register = await navigator.serviceWorker.register("/sw.js", {
           scope: "/",
         });
 
-        // Listen Push Notifications
         const subscription = await register.pushManager.subscribe({
           userVisibleOnly: true,
           applicationServerKey: urlBase64ToUint8Array(PUBLIC_VAPID_KEY),
