@@ -1,4 +1,5 @@
 const EmailService = require("./services/notify/email");
+const PushService = require("./services/notify/webPush");
 const { createTransport } = require("nodemailer");
 
 // Controllers
@@ -10,13 +11,7 @@ const transporter = createTransport(transConfig);
 
 // Instance.
 const objEmail = new EmailService(transporter);
-
-// const notify = new baseService();
-
-// Usage.
-// Email for client (client).
-// Who sends it (author).
-// Type of service (message).
+const objOPush = new PushService();
 
 // Producction
 const quickMailNotification = async (client, author, message, htmlConntent) => {
@@ -26,7 +21,13 @@ const quickMailNotification = async (client, author, message, htmlConntent) => {
         "Error: This service require client, author and message."
       );
     } else {
-      const response = await send(objEmail, client, author, message, htmlConntent);
+      const response = await send(
+        objEmail,
+        client,
+        author,
+        message,
+        htmlConntent
+      );
       return response;
     }
   } catch (error) {
@@ -34,5 +35,10 @@ const quickMailNotification = async (client, author, message, htmlConntent) => {
   }
 };
 
+const quickPushNotification = async () => {
+  const resposne = objOPush.testScope();
+  console.log("resposneresposneresposneresposne",resposne);
+};
+
 // Dev
-module.exports = { quickMailNotification };
+module.exports = { quickMailNotification, quickPushNotification };

@@ -7,7 +7,7 @@ require("dotenv").config();
 class main {
   constructor() {
     this.PUBLIC_VAPID_KEY =
-    "BD_ZMjYJnK7XVLJYioT6mjqzWGZ31hDFK4y759zBDDXBw1qktWUaAf5VRtX3nQTcKIh74hbIIRz9c4mTD5kf6RQ";
+      "BD_ZMjYJnK7XVLJYioT6mjqzWGZ31hDFK4y759zBDDXBw1qktWUaAf5VRtX3nQTcKIh74hbIIRz9c4mTD5kf6RQ";
   }
 
   urlBase64ToUint8Array(base64String) {
@@ -51,5 +51,10 @@ class main {
 
     return response;
   }
+
+  testScope () {
+    return 'uundefined...!'
+  }
 }
 
+module.exports = main;
