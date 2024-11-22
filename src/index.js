@@ -1,5 +1,4 @@
 const EmailService = require("./services/notify/email");
-const PushService = require("./services/notify/webPush");
 const { createTransport } = require("nodemailer");
 
 // Controllers
@@ -11,7 +10,6 @@ const transporter = createTransport(transConfig);
 
 // Instance.
 const objEmail = new EmailService(transporter);
-const objOPush = new PushService();
 
 // Producction
 const quickMailNotification = async (client, author, message, htmlConntent) => {
@@ -35,10 +33,4 @@ const quickMailNotification = async (client, author, message, htmlConntent) => {
   }
 };
 
-const quickPushNotification = async () => {
-  const resposne = objOPush.testScope();
-  console.log("resposneresposneresposneresposne",resposne);
-};
-
-// Dev
-module.exports = { quickMailNotification, quickPushNotification };
+module.exports = { quickMailNotification };
