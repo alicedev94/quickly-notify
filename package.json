@@ -1,14 +1,14 @@
 {
   "name": "quickly-notify",
-  "version": "1.0.0",
-  "description": "Quickly Notify is an agile and user-friendly service that allows developers to send push notifications and emails efficiently. Designed to simplify communication with users, Quickly Notify ensures quick integration and reliable delivery of notifications and emails.",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "version": "0.0.6-alpha.0",
+  "description": "Quickly Notify is an agile and user-friendly service that allows developers to send emails efficiently. Designed to simplify communication with users, Quickly Notify ensures quick integration and reliable delivery of emails.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/index.js",
     "api": "nodemon ./src/api/index.js",
-    "build": "babel src --out-dir dist --ignore node_modules --env-name build && babel src --out-dir dist --presets @babel/preset-env"
+    "build": "babel src --out-dir dist --ignore node_modules && babel src --out-dir dist --ignore node_modules --env-name build"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/alicedev94/quickly-notify#readme",
   "devDependencies": {
-    "@babel/cli": "^7.25.9",
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -38,22 +38,5 @@
     "nodemailer": "^6.9.15",
     "path": "^0.12.7",
     "web-push": "^3.6.7"
-  },
-  "babel": {
-    "env": {
-      "build": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "modules": false,
-              "targets": {
-                "esmodules": true
-              }
-            }
-          ]
-        ]
-      }
-    }
   }
 }
